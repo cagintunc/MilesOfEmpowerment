@@ -62,7 +62,7 @@ def get_alphabetically_sorted(request, *args, **kwargs):
 
 @api_view(["GET"])
 def download_pdf(request):
-    file_path = os.path.join(settings.STATIC_ROOT, 'pdfs', 'DonationForm.pdf')
+    file_path = os.path.join('pdfs', 'DonationForm.pdf')
     if os.path.exists(file_path):
         with open(file_path, 'rb') as pdf_file:
             pdf_content = pdf_file.read()
