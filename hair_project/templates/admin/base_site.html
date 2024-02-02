@@ -1,0 +1,143 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+        :root {
+    --primary: #a71c0a;
+    --secondary: #b42310;
+    --accent: #ffffff;
+    --primary-fg: #fff;
+
+    --body-fg: #c10f0f;
+    --body-bg: #fff;
+    --body-quiet-color: #666;
+    --body-loud-color: #000;
+
+    --header-color: #ffc;
+    --header-branding-color: var(--accent);
+    --header-bg: var(--secondary);
+    --header-link-color: var(--primary-fg);
+
+    --breadcrumbs-fg: #c4dce8;
+    --breadcrumbs-link-fg: var(--body-bg);
+    --breadcrumbs-bg: var(--primary);
+
+    --link-fg: #65605d;
+    --link-hover-color: rgb(61, 43, 28);
+    --link-selected-fg: #d2d2d2;
+
+    --hairline-color: #e8e8e8;
+    --border-color: #ccc;
+
+    --error-fg: #ba2121;
+
+    --message-success-bg: #dfd;
+    --message-warning-bg: rgb(224, 185, 143);
+    --message-error-bg: #ffefef;
+
+    --darkened-bg: #f8f8f8; /* A bit darker than --body-bg */
+    --selected-bg: #e4e4e4; /* E.g. selected table cells */
+    --selected-row: #ffc;
+
+    --button-fg: #fff;
+    --button-bg: var(--primary);
+    --button-hover-bg: #dadada;
+    --default-button-bg: var(--secondary);
+    --default-button-hover-bg: #fefdfb;
+    --close-button-bg: #888; /* Previously #bbb, contrast 1.92 */
+    --close-button-hover-bg: #747474;
+    --delete-button-bg: #ba2121;
+    --delete-button-hover-bg: #a41515;
+
+    --object-tools-fg: var(--button-fg);
+    --object-tools-bg: var(--close-button-bg);
+    --object-tools-hover-bg: var(--close-button-hover-bg);
+    }
+
+    html[data-theme="dark"] {
+        --primary: #6d524c; 
+        --secondary: #6d524c;
+        --primary-fg: #f7f7f7;
+
+        --body-fg: #eeeeee;
+        --body-bg: #121212;
+        --body-quiet-color: #e0e0e0;
+        --body-loud-color: #ffffff;
+
+        --breadcrumbs-link-fg: #e0e0e0;
+        --breadcrumbs-bg: var(--primary);
+
+        --link-fg: #81d4fa;
+        --link-hover-color: #4ac1f7;
+        --link-selected-fg: #6f94c6;
+
+        --hairline-color: #272727;
+        --border-color: #353535;
+
+        --error-fg: #e35f5f;
+        --message-success-bg: #006b1b;
+        --message-warning-bg: #583305;
+        --message-error-bg: #570808;
+
+        --darkened-bg: #212121;
+        --selected-bg: #1b1b1b;
+        --selected-row: #4f3223;
+
+        --close-button-bg: #333333;
+        --close-button-hover-bg: #666666;
+    }
+
+    #header {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    h1 h2 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    #footer {
+        background-color: #665858;
+        color: white;
+    }
+    #nav-filter {
+        display: none;
+    }
+
+    #app-auth {
+        display: none;
+    }
+
+    @media(prefers-color-scheme: dark) {
+        #content.colM {
+            background-color: #201311;
+        }
+    }
+    #nav-sidebar.sticky {
+        margin-top: 10px;
+    }
+    
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" ><a href="{% url 'admin:index' %}">Cancer Project Administration</a></h1>
+{% endblock %}
+
+{% block content-main %}
+<a href="/admin/auth/" class="section" title="Models in the Authentication and Authorization application">XXXXXXXXXXXX</a>
+{% endblock %}
+
+
+{% block nav-global %}
+{% endblock %}
+
+{% block footer %}
+<div id="footer">
+    <h4 style="font-size: 6px; text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        Telephone: +90xxxxxxxx <br><br>
+        Email: cancerhairproject@...<br>
+    </h4>
+</div>
+{% endblock %}
+
