@@ -17,7 +17,7 @@ DEBUG = False
 DEBUG = 'RENDER' not in os.environ
 
 #ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'c816-176-88-143-161.ngrok-free.app', '[::1]']
-ALLOWED_HOSTS = ['.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:    
@@ -119,11 +119,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-#STATIC_URL = 'static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Turn on WhiteNoise storage backend that takes care of compressing static files
 # and creating unique names for each version so they can safely be cached forever.
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
