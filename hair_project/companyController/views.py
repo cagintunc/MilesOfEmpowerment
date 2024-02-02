@@ -6,7 +6,7 @@ import os
 from django.conf import settings
 import base64
  
-@api_view(['POST'])
+@api_view(['GET'])
 def get_all_companies_sorted(request, *args, **kwargs):
     company_objects = Company.objects.all()
     companies_serializer = CompanySerializer(company_objects, many=True)
@@ -33,7 +33,7 @@ def get_all_companies_sorted(request, *args, **kwargs):
     
     return Response(companies)
 
-@api_view(["POST"])
+@api_view(["GET"])
 def get_alphabetically_sorted(request, *args, **kwargs):
     sorted_companies = None
     parameter = int(request.data["reverse"])
@@ -60,7 +60,7 @@ def get_alphabetically_sorted(request, *args, **kwargs):
     
 
 
-@api_view(["POST"])
+@api_view(["GET"])
 def download_pdf(request):
     file_path = os.path.join(settings.STATIC_ROOT, 'pdfs', 'DonationForm.pdf')
     if os.path.exists(file_path):
@@ -71,7 +71,7 @@ def download_pdf(request):
     else:
         return Response({'error': 'PDF not found'}, status=404)
     
-@api_view(["POST"])
+@api_view(["GET"])
 def total_donation(request):
     companyObject = Company.objects.all()
     companySeri = CompanySerializer(companyObject, many=True)

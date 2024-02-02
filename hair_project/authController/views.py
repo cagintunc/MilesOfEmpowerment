@@ -59,7 +59,7 @@ def updateCompanyView(request, pk):
                      "last_updated_cm": new_donation})    
 
 
-@api_view(["POST"])
+@api_view(["GET"])
 def login_view(request, *args, **kwargs):
     email = request.data["email"]
     password = request.data["password"]
@@ -78,7 +78,7 @@ def login_view(request, *args, **kwargs):
     else:
         return Response({"message": "User does not exist"}, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(["POST"])
+@api_view(["GET"])
 def search_get(request, *args, **kwargs):
     pure_field = request.data["search"]
     name = pure_field.rstrip().strip().lower()
