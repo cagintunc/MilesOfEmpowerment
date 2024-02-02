@@ -14,20 +14,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '')
 SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-cl8(*0k-i*8ee!5z0$(c9@5^%44+26bmob1(^y7a82!)ge+m_^')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-DEBUG = 'RENDER' not in os.environ
 
 #ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'c816-176-88-143-161.ngrok-free.app', '[::1]']
-ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
-
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:    
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,7 +65,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'hair_project.wsgi.application'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -116,16 +110,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
+STATIC_URL = 'static/'
+STATICFILES_DIR = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
-STATIC_URL = '/static/'
-# Turn on WhiteNoise storage backend that takes care of compressing static files
-# and creating unique names for each version so they can safely be cached forever.
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -138,7 +126,8 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://localhost:8000',
-    'http://localhost:3001'
+    'http://localhost:3001',
+    ''
 
 )
 
