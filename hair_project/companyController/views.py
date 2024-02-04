@@ -33,7 +33,7 @@ def get_all_companies_sorted(request, *args, **kwargs):
     
     return Response(companies)
 
-@api_view(["GET"])
+@api_view(["POST"])
 def get_alphabetically_sorted(request, *args, **kwargs):
     sorted_companies = None
     parameter = int(request.data["reverse"])
