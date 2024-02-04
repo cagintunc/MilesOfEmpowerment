@@ -148,7 +148,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3001',
     'http://localhost:3000',
     'https://example.com',
-    'https://miles-of-empowerment.onrender.com'
+    'https://miles-of-empowerment.onrender.com',
+    'https://hair-donation-admin-panel.onrender.com'
 ]
 
 CORS_ORIGIN_WHITELIST = [
@@ -156,6 +157,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'https://example.com',
     'https://miles-of-empowerment.onrender.com',
+    'https://hair-donation-admin-panel.onrender.com'
 ]
 
 CORS_ALLOW_HEADERS = [
